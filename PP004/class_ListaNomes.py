@@ -1,6 +1,6 @@
 import class_AnaliseDados as AnaliseDados
 
-class ListaNomes(AnaliseDados):
+class ListaNomes(AnaliseDados.AnaliseDados):
     
     def __init__(self):
         super().__init__(type("String"))
@@ -27,7 +27,7 @@ class ListaNomes(AnaliseDados):
 
     def mostraMenor(self):
         '''
-        Este método retorna o menos elemento da lista, neste caso o primeiro elemento da lista (index = 0)
+        Este método retorna o menor elemento da lista, neste caso o primeiro elemento da lista (index = 0)
         '''
         sorted_lista = sorted(self.__lista)
         return min(sorted_lista, default=None)

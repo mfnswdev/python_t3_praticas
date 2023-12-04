@@ -1,7 +1,7 @@
 import class_AnaliseDados as AnaliseDados
 import class_Data as Data
 
-class ListaDatas(AnaliseDados):
+class ListaDatas(AnaliseDados.AnaliseDados):
     
     def __init__(self):
         super().__init__(type("Data"))
@@ -13,17 +13,25 @@ class ListaDatas(AnaliseDados):
         elementos vão existir na lista e depois
         solicita a digitação de cada um deles
         '''
-        try:
-            num_elementos = int(input("Digite o número de elementos na lista de datas: "))
-            for _ in range(num_elementos):
-                dia = int(input("Digite o dia: "))
-                mes = int(input("Digite o mês: "))
-                ano = int(input("Digite o ano: "))
-                data = Data(dia, mes, ano)
-                self.__lista.append(data)
-        except ValueError:
-            print("Por favor, digite números válidos.")
-
+        while True:
+            try:
+                num_elementos = int(input("Digite o número de elementos na lista de datas: "))
+                for _ in range(num_elementos):
+                    while True:
+                        try:
+                            dia = int(input("Digite o dia: "))
+                            mes = int(input("Digite o mês: "))
+                            ano = int(input("Digite o ano: "))
+                            data = Data.Data(dia, mes, ano)  # Cria um objeto da sua classe Data
+                            self.__lista.append(data)
+                            break  # Sai do loop interno se a data for válida
+                        except ValueError:
+                            print("Por favor, digite uma data válida.")
+                    print("Data adicionada com sucesso!")
+                break  # Sai do loop externo se todas as datas forem adicionadas corretamente
+            except ValueError:
+                print("Por favor, digite um número válido para o número de elementos.")
+            
     def mostraMediana(self):
         '''
         Este método ordena a lista e mostra o

@@ -1,10 +1,10 @@
 import class_AnaliseDados as AnaliseDados
 
-class ListaIdades(AnaliseDados):
+class ListaSalarios(AnaliseDados.AnaliseDados):
     
     def __init__(self):
-        super().__init__(type(int))
-        self.__lista = []        
+        super().__init__(type(float))
+        self.__lista = []
 
     def entradaDeDados(self):
         '''
@@ -13,12 +13,12 @@ class ListaIdades(AnaliseDados):
         solicita a digitação de cada um deles
         '''
         try:
-            num_elementos = int(input("Digite o número de elementos na lista de idades: "))
+            num_elementos = int(input("Digite o número de elementos na lista de salários: "))
             for _ in range(num_elementos):
-                idade = int(input("Digite uma idade: "))
-                self.__lista.append(idade)
+                salario = float(input("Digite um salário: "))
+                self.__lista.append(salario)
         except ValueError:
-            print("Por favor, digite números inteiros válidos.")
+            print("Por favor, digite números válidos.")
 
     def mostraMediana(self):
         '''
@@ -52,7 +52,7 @@ class ListaIdades(AnaliseDados):
 
     def __str__(self):
         '''
-        Este método retorna uma representação em string da lista de idades
+        Este método retorna uma representação em string da lista de salários
         '''
         sorted_lista = sorted(self.__lista)
-        return ', '.join(str(idade) for idade in self.__lista)
+        return ', '.join(str(salario) for salario in self.__lista)
