@@ -1,5 +1,5 @@
 class Data:
-    
+
     def __init__(self, dia = 1, mes = 1, ano = 2000):
         if dia < 1 or dia > 31:
             raise ValueError("Dia inválido")
