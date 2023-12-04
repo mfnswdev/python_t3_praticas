@@ -21,8 +21,11 @@ def main():
 
     print("Fim do teste!!!")
     
-    for nome, salario in zip(nomes, salarios):
-        print(f"{nome}: R${salario}")
+    # for nome, salario in zip(nomes, salarios):
+    #     print(f"{nome}: R${salario}")
+        
+    salarios_reajustados = salarios.salarios_reajustados()
+    print(salarios_reajustados)
 
 if __name__ == "__main__":
     main()
