@@ -53,6 +53,9 @@ class ListaSalarios(AnaliseDados.AnaliseDados):
     def listarEmOrdem(self):
         sorted_lista = sorted(self.__lista)
         return sorted_lista
+    
+    def __iter__(self):
+        return iter(self.__lista)
 
     def __str__(self):
         '''

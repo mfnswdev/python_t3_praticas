@@ -20,6 +20,9 @@ def main():
         print("___________________")
 
     print("Fim do teste!!!")
+    
+    for nome, salario in zip(nomes, salarios):
+        print(f"{nome}: R${salario}")
 
 if __name__ == "__main__":
     main()
