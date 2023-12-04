@@ -54,6 +54,11 @@ class ListaDatas(AnaliseDados.AnaliseDados):
         '''
         sorted_lista = sorted(self.__lista, key=lambda x: (x.ano, x.mes, x.dia))
         return max(self.__lista, default=None)
+    
+    def listarEmOrdem(self):
+        sorted_lista = sorted(self.__lista, key=lambda x: (x.ano, x.mes, x.dia))
+        date_strings = [str(date) for date in sorted_lista]
+        return date_strings
 
     def __str__(self):
         '''

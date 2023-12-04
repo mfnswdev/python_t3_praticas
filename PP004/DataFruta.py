@@ -16,6 +16,7 @@ def main():
         print(lista.mostraMediana())
         print(lista.mostraMenor())
         print(lista.mostraMaior())
+        print(lista.listarEmOrdem())
         print("___________________")
 
     print("Fim do teste!!!")

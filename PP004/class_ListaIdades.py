@@ -50,6 +50,10 @@ class ListaIdades(AnaliseDados.AnaliseDados):
         sorted_lista = sorted(self.__lista)
         return max(self.__lista, default=None)
 
+    def listarEmOrdem(self):
+        sorted_lista = sorted(self.__lista)
+        return sorted_lista
+
     def __str__(self):
         '''
         Este método retorna uma representação em string da lista de idades
