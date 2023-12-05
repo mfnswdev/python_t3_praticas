@@ -39,6 +39,12 @@ class ListaNomes(AnaliseDados.AnaliseDados):
         sorted_lista = sorted(self.__lista)
         return max(sorted_lista, default=None)
 
+    def listarEmOrdem(self):
+        sorted_lista = sorted(self.__lista)
+        return sorted_lista
+    
+    def __iter__(self):
+        return iter(self.__lista)
 
     def __init__(self):
         self.__lista = []

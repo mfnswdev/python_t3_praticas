@@ -56,6 +56,24 @@ class ListaDatas(AnaliseDados.AnaliseDados):
         '''
         sorted_lista = sorted(self.__lista, key=lambda x: (x.ano, x.mes, x.dia))
         return max(self.__lista, default=None)
+    
+    def listarEmOrdem(self):
+        sorted_lista = sorted(self.__lista, key=lambda x: (x.ano, x.mes, x.dia))
+        date_strings = [str(date) for date in sorted_lista]
+        return date_strings
+
+    def modificar_dia_primeiro(self, data):
+        data.dia = 1
+        return data
+
+    def datas_anteriores_2019(self):
+        return filter(lambda data: data.ano < 2019, self.__lista)
+
+    def datas_modificadas(self):
+        return list(map(self.modificar_dia_primeiro, self.datas_anteriores_2019()))
+    
+    def __iter__(self):
+        return iter(self.__lista)
 
     def __str__(self):
         '''

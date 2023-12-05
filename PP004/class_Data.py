@@ -5,7 +5,7 @@ class Data:
             raise ValueError("Dia inválido")
         if mes < 1 or mes > 12:
             raise ValueError("Mês inválido")
-        if ano < 2000 or ano > 2100:
+        if ano < 1900 or ano > 2100:
             raise ValueError("Ano inválido")
         self.__dia = dia
         self.__mes = mes

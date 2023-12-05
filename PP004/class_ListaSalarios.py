@@ -49,6 +49,19 @@ class ListaSalarios(AnaliseDados.AnaliseDados):
         '''
         sorted_lista = sorted(self.__lista)
         return max(self.__lista, default=None)
+    
+    def listarEmOrdem(self):
+        sorted_lista = sorted(self.__lista)
+        return sorted_lista
+    
+    def reajustar_salario(self, salario):
+        return salario * 1.1
+
+    def salarios_reajustados(self):
+        return list(map(self.reajustar_salario, self.__lista))
+    
+    def __iter__(self):
+        return iter(self.__lista)
 
     def __str__(self):
         '''
