@@ -56,3 +56,18 @@ class ListaSalarios(AnaliseDados.AnaliseDados):
         '''
         sorted_lista = sorted(self.__lista)
         return ', '.join(str(salario) for salario in self.__lista)
+
+    def __init__(self):
+        self.__lista = []
+
+    def entradaDeDados(self, salario): 
+        self.__lista.append(salario)
+
+    def __str__(self):
+        return ', '.join(str(salario) for salario in self.__lista)
+
+    def calcularReajuste(self, percentual):
+        for i in range(len(self.__lista)):
+            self.__lista[i] *= 1 + percentual / 100
+        
+        return self.__lista
