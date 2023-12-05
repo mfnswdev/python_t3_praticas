@@ -1,5 +1,7 @@
 import class_AnaliseDados as AnaliseDados
 import class_Data as Data
+from class_Data import Data
+
 
 class ListaDatas(AnaliseDados.AnaliseDados):
     
@@ -61,3 +63,17 @@ class ListaDatas(AnaliseDados.AnaliseDados):
         '''
         sorted_lista = sorted(self.__lista, key=lambda x: (x.ano, x.mes, x.dia))
         return ', '.join(str(data) for data in self.__lista)
+    
+    def entradaDeDados(self, dia, mes, ano):  
+        data = Data(dia, mes, ano)
+        self.__lista.append(data)
+
+    def entradaDeDados(self, nova_data):  # Atualizado para receber um objeto Data
+        self.__lista.append(nova_data)
+
+    def modificarDatasAnteriores2019(self):
+        for i in range(len(self.__lista)):
+            if self.__lista[i].ano < 2019:
+                self.__lista[i].dia = 1
+        
+        return self.__lista
