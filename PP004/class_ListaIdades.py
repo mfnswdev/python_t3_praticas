@@ -56,3 +56,6 @@ class ListaIdades(AnaliseDados.AnaliseDados):
         '''
         sorted_lista = sorted(self.__lista)
         return ', '.join(str(idade) for idade in self.__lista)
+    
+    def entradaDeDados(self, nova_idade): 
+        self.__lista.append(nova_idade)
