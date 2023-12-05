@@ -40,6 +40,12 @@ class ListaNomes(AnaliseDados.AnaliseDados):
         return max(sorted_lista, default=None)
 
 
+    def __init__(self):
+        self.__lista = []
+
+    def entradaDeDados(self, nome):  # Deve aceitar um único argumento (o nome)
+        self.__lista.append(nome)
+
     def __str__(self):
         return ', '.join(self.__lista)
         
