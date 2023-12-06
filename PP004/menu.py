@@ -40,17 +40,20 @@ def incluir_idade(lista_idades):
     except ValueError:
         print("Por favor, digite uma idade válida.")
 
-def percorrer_listas(*listas):
-    for lista in listas:
-        print(lista)
+def percorrer_listas(nomes,salarios):
+    for nome, salario in zip(nomes, salarios):
+        print(f"{nome}: R${salario}")
 
 def calcular_folha_salarial(lista_salarios):
-    novo_salario = lista_salarios.calcularReajuste(10)
-    print(f"Nova folha salarial com reajuste de 10%: {novo_salario}")
+    # novo_salario = lista_salarios.calcularReajuste(10)
+    # print(f"Nova folha salarial com reajuste de 10%: {novo_salario}")
+    salarios_reajustados = lista_salarios.salarios_reajustados()
+    print(salarios_reajustados)
 
 def modificar_datas(lista_datas):
-    lista_datas.modificarDatasAnteriores2019()
-    print("Datas modificadas conforme especificado!")
+    datas_modificadas = lista_datas.datas_modificadas()
+    for data_original, data_modificada in zip(lista_datas.listarEmOrdem(), datas_modificadas):
+        print(f"Data original: {data_original} | Data modificada: {data_modificada}")
 
 # Menu de opções
 def menu():
@@ -66,7 +69,7 @@ def menu():
         print("2. Incluir um salário na lista de salários")
         print("3. Incluir uma data na lista de datas")
         print("4. Incluir uma idade na lista de idades")
-        print("5. Percorrer as listas de nomes, datas, salários e idades")
+        print("5. Percorrer as listas de nomes e salários")
         print("6. Calcular o valor da folha com um reajuste de 10%")
         print("7. Modificar o dia das datas anteriores a 2019")
         print("8. Sair")
@@ -82,7 +85,7 @@ def menu():
         elif opcao == "4":
             incluir_idade(idades)
         elif opcao == "5":
-            percorrer_listas(nomes, datas, salarios, idades)
+            percorrer_listas(nomes,salarios)
         elif opcao == "6":
             calcular_folha_salarial(salarios)
         elif opcao == "7":
